@@ -1,17 +1,33 @@
-import React from "react";
-import { Typography, Box } from "@mui/material";
+import React, { useState } from "react";
+import { Typography, Box, TextField, Switch } from "@mui/material";
 
 const Description = () => {
   // Teksten nedenfor kan redigeres av kursdeltakerne for å tilpasse beskrivelsen
   const descriptionText =
-    "Start dagen din med oversikt og inspirasjon. Her på Daily får du tilgang til dine viktigste oppgaver, dagens vær og en daglig dose med inspirasjon.";
+    "Her på Daily får du tilgang til dine viktigste mål, dagens hit og en daglig dose med konspirasjon.";
+
+  const [value, setValue] = useState("heihei");
+  console.log(value);
+
+  const[checked, setChecked] = useState(false);
+  console.log(checked);
 
   return (
     <Box sx={{ my: 4 }}>
       <Typography variant="h5" component="h2" gutterBottom>
-        En ny dag, en ny mulighet
+        En ny dag, et nytt oppdrag
       </Typography>
       <Typography variant="body1">{descriptionText}</Typography>
+
+      <Switch value={checked} onChange={(e) => setChecked(e.target.checked)} />
+      <TextField 
+        id="outlined-basic" 
+        label="Target:" 
+        variant="outlined" 
+        value={value} 
+        onChange={(e) => setValue(e.target.value)}
+        />
+    
     </Box>
   );
 };
