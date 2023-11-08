@@ -6,7 +6,7 @@ const Description = () => {
   const descriptionText =
     "Her på Daily får du tilgang til dine viktigste mål, dagens hit og en daglig dose med konspirasjon.";
 
-  const [value, setValue] = useState("heihei");
+  const [value, setValue] = useState("New York Stock Exchange");
   console.log(value);
 
   const[checked, setChecked] = useState(false);
